@@ -66,4 +66,3 @@ while app == True:
 
                     prod_del = int(input("\nSelect which product you'd like to delete: "))
                     products_list.pop(prod_del)
-

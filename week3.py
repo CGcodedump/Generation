@@ -31,12 +31,6 @@ def courLoad():
             cour_file = line[:-1]
             # Add item to the list
             courier_list.append(cour_file)
-    with open('products.txt', 'r') as filehandle:
-        for line in filehandle:
-            # Remove linebreak which is the last character of the string
-            prod_file = line[:-1]
-            # Add item to the list
-            products_list.append(prod_file)
 
 main_menu = '''Please choose from the following:
     
@@ -82,8 +76,8 @@ order = {}
 
 prodLoad()
 courLoad()
-#! Open couriers.txt
-#! Create order status list
+
+
 while app == True:
     try:
         print (main_menu)
@@ -95,8 +89,9 @@ while app == True:
             print("\nThanks for using the app")
             prodSave()
             courSave()
-            #! Save couriers list to couriers.txt (Close the file)
             break
+
+        #! Product Menu
         elif user_input == 1:
             try:
                 print(product_menu)
@@ -133,6 +128,7 @@ while app == True:
                     prod_del = int(input("\nSelect which product you'd like to delete: "))
                     products_list.pop(prod_del)
 
+        #! Order Menu
         elif user_input == 2:
             try:
                 print(order_menu)
@@ -201,6 +197,7 @@ while app == True:
                 elif user_input == 0:
                     print("Returning to main menu")
         
+        #! Courier Menu
         elif user_input == 3:
             try:
                 print(courier_menu)
